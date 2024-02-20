@@ -12,6 +12,49 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import { NewOfferDialog } from "../components/NewOfferDialog";
 
+const tempData = [
+  {
+    id: 1,
+    name: "John Doe",
+    role: "Software Engineer",
+    salary: 100000,
+    bonus: 10000,
+    equity: 0.1,
+    culture: "Good",
+    learningOpportunities: "High",
+  },
+  {
+    id: 2,
+    name: "Jane Doe",
+    role: "Product Manager",
+    salary: 120000,
+    bonus: 12000,
+    equity: 0.1,
+    culture: "Good",
+    learningOpportunities: "High",
+  },
+  {
+    id: 3,
+    name: "John Smith",
+    role: "Software Engineer",
+    salary: 100000,
+    bonus: 8000,
+    equity: 0.8,
+    culture: "Good",
+    learningOpportunities: "High",
+  },
+  {
+    id: 4,
+    name: "Jane Smith",
+    role: "Product Manager",
+    salary: 120000,
+    bonus: 7000,
+    equity: 0.5,
+    culture: "Good",
+    learningOpportunities: "High",
+  },
+];
+
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [existingOffers, setExistingOffers] = useState([]);
