@@ -3,19 +3,21 @@ import { useState, useEffect } from "react";
 import styles from "../../../styles/Offer.module.css";
 
 export default function ProductDetail({ params }) {
-  const offers = JSON.parse(localStorage.getItem("offers"));
   const [currentOffer, setCurrentOffer] = useState(null);
 
   useEffect(() => {
-    if (offers.length > 0) {
-      setCurrentOffer(offers.find((offer) => offer.id == params.offerId));
+    if (typeof window !== "undefined") {
+      const offers = JSON.parse(localStorage.getItem("offers"));
+      if (offers.length > 0) {
+        setCurrentOffer(offers.find((offer) => offer.id == params.offerId));
+      }
     }
   }, []);
 
   return (
     <div>
       <div className={styles.main}>
-        <h1>Offer details</h1>
+        <div className={styles.title}>Offer details</div>
         {currentOffer && (
           <div className={styles.container}>
             <div>Name: {currentOffer.name}</div>

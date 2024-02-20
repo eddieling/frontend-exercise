@@ -17,14 +17,16 @@ export default function Home() {
   const [existingOffers, setExistingOffers] = useState([]);
 
   useEffect(() => {
-    const offers = JSON.parse(localStorage.getItem("offers"));
-    if (!offers || offers.length === 0) {
-      localStorage.setItem("offers", JSON.stringify(tempData));
-      setExistingOffers(tempData);
-    } else {
-      setExistingOffers(offers);
+    if (typeof window !== "undefined") {
+      const offers = JSON.parse(localStorage.getItem("offers"));
+      if (!offers || offers.length === 0) {
+        localStorage.setItem("offers", JSON.stringify(tempData));
+        setExistingOffers(tempData);
+      } else {
+        setExistingOffers(offers);
+      }
     }
-  }, [localStorage.getItem("offers")]);
+  }, [typeof window !== "undefined" && localStorage.getItem("offers")]);
 
   const handleClickOpen = () => {
     setOpen(true);
