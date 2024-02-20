@@ -1,0 +1,31 @@
+.inputContainer {
+  display: flex;
+  margin-top: 15px;
+}
+.text {
+  width: 100px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.longText {
+  width: 150px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.textField {
+  width: 200px;
+  font-size: 30px;
+  margin-top: 6px;
+}
+.longTextField {
+  width: 200px;
+  font-size: 30px;
+  margin-top: 6px;
+}
+
+.multilineText {
+  width: 350px;
+  margin-top: 6px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
